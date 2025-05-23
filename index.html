@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Video-XL2: the fastest long video understander.</h1>
+            <h1 class="title is-1 publication-title">Video-XL2: The Better And Faster Long Video Understander.</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -118,24 +118,6 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-
 <!-- Main statement -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -144,13 +126,10 @@
         <h2 class="title is-3">Video-XL2</h2>
         <div class="content has-text-justified">
           <p>
-            Video-XL2 is faster, better and lower resource demanding. Long video understanding get more and more attention day by day. 
-            Many current models foces on it, get strong performance on many benchmarks. But overhead memory resource demanding and high response latency 
-            is alomost unacceptable, when the length of input video increasing. To largely optimize this challengt and preserve strong performance, we publih 
-            Video-XL2, whcih features:
-            - SOTA performance among existing open-source same params model. (2025.6.1)
-            - The impressive performance across various GPU compared to other models.
-            - High speed and low memory for processing unlimited duration videos.
+          The field of long video understanding is rapidly evolving. While numerous existing models achieve strong performance on benchmarks, their substantial memory overhead and high response latency become a critical bottleneck, especially as video input lengths grow. 
+          To definitively overcome these limitations and maintain superior performance, we're releasing Video-XL2. It makes faster and better long video understanding possible, with key features including:
+          State-of-the-art performance among existing open-source models with comparable parameters (as of 2025.6.1).
+          High speed and ultra-low memory usage for processing videos of any length.
           </p>
         </div>
       </div>
@@ -160,141 +139,115 @@
 <!-- Main statement -->
 
 
-
-
-<!-- Paper abstract -->
-<!-- <section class="section hero is-light">
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">State-of-the-Art Performance in Long Video Understanding and Temporal Grounding</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Video-XL2-8B consistently achieves **state-of-the-art performance** across mainstream Long Video Understanding and Temporal Grounding benchmarks when compared against open-source models with similar parameter counts.
+          </p>
+
+          <h3>Long Video Understanding</h3>
+          <p>
+            Video-XL2-8B demonstrates **remarkable capabilities** across multiple long video benchmarks, scoring **74.9 on MLVU, 66.4 on VideoMME, and 60.7 on LongVideoBench**.
+          </p>
+          <img src="images/carousel1.jpg" alt="motivation" class="inserted-image-noshadow">
+
+          <h3>Temporal Grounding</h3>
+          <p>
+            Video-XL2-8B showcases **impressive performance** in Temporal Grounding, establishing itself as the *the best general VLM** for this task. Video-XL2-8B achieved **XX on TimePass, XX on Charades-STA, and XX on VISTAL**. Notably, it **surpasses 72B models** on some benchmarks.
+          </p>
+          <img src="images/carousel2.jpg" alt="motivation" class="inserted-image-noshadow">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Section 2 -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Superior Efficiency</h2>
+        <div class="content has-text-justified">
+          <p>
+            In addition to strong performance, the other impressive and obvious advantage is high efficiency for processing long video. We propose two key innovation (block-granularity pre-filiing, selecting decoding) 
+            to largely accelerate it and maintain its performance. As a result, Video-XL2 make remarkable reduction on prefilling FLOPS and KV Cache demanding in decoding and reduce the TTFT.
+          </p>
+          <img src="images/carousel3.jpg" alt="motivation" class="inserted-image-noshadow">
+          <p>
+            This advantage is more obvious in extremely-long scenario or long resource scenario. As the following Fig 3 shows, compared to Video-ChatFlash, Video-XL2 still maintain high prefilling speed in thougnds frames input.
+            At the same time, its maintain low memory resource demanding. This point make our models better for these special but more important and realistic scenario.
+          </p>
+          <img src="images/carousel3.jpg" alt="motivation" class="inserted-image-noshadow">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section 2-->
+
+
+
+<!-- Section 3 -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Model Architecture And Training Strategy</h2>
+        <div class="content has-text-justified">
+          <p>
+            1. 模型架构：要包含时间戳和 time embedding
+            2. 简单说一下训练阶段的设计
           </p>
         </div>
       </div>
     </div>
   </div>
-</section> -->
-<!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- Section 3-->
 
 
 
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
+<!-- Section 4 -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
         
+        <h2 class="title is-3">Acceleration Approach </h2>
+        <div class="content has-text-justified">
+          <p>
+            Video-XL2 make a comprehensive acceleration strategy including prefilling and decoding for long video understanding. The strategy is consist
+            of two key innovation techniques: Block-granularity Sparsity Attention and Bi-level KV Decoding. These approaches make our models achieve low memory demanding and high speed on both pre-filling and decoding.
+          </p>
+        </div>
+
+        <h3>Prefilling: Block-granularity Sparsity Attention</h3>
+        <p>
+            For prefilling acceleration, previous works have oberseve the attention pattern in video LLM is super sparse. Based on these observation, we streamingly encode
+            video chunks one by one, and provided with long term memory and short term memory for preserving complete video contextual structure. For short term information, we 
+            apply Block-granularity sliding window mechanism to make each chunk can aggregate the information of n chunks before it. For Long Term, the timpestampe was made to be
+            the information carrier, each timestamps betwee chunks summary the history information and pass it to the later chunks. This design make Video-XL2 largely reduce the
+            attention flops. The above design can be summaried as the Figure 4.
+        </p>
+
+        <h3>Dedoding: Bi-level KV Decoding</h3>
+        <p>
+           After prefilling, all KVs prepared in cache for subsequent decoding. The most cases in long video understanding is only fouces on single or multi time spans in
+           long video. So, based on this, we select KVs of  important video chunks for providing detailed local information and merge the other KVs to reduce KV cache demanding and provide coarse
+           -granularity abstract global information. Through this approach, Video-XL2 counld get better performance in detail undersatanding and high efficiency in decoding.
+        </p>
+
       </div>
     </div>
-  </section>
-<!--End paper poster -->
-
+  </div>
+</section>
+<!-- Section 4-->
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
