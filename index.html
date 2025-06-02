@@ -23,9 +23,9 @@
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-  <title>Video-XL2: the fastest long video understander.</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" href="static/images/videoxl.ico.png">
+  <title>Video-XL-2</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/videoxl.ico"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -52,63 +52,97 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Video-XL2: The Better And Faster Long Video Understander.</h1>
+            <h1 class="title is-1 publication-title">
+              <img src="static/images/videoxl.ico.png" style="width:1.6em;vertical-align: middle" alt="Logo">
+              <span class="Video-XL-2" style="vertical-align: middle">Video-XL-2</span>
+            </h1>
+            <h2 class="subtitle is-3 publication-subtitle" ,="" style="margin-bottom: 20px;">
+              A Better, Faster, and High-Frame-Count Model for Long Video Understanding.
+            </h2>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Minji</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Minghao Qin</a><sup>*</sup>
+                <sup>1</sup>,
+              </span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Hanni</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Xiangrui Liu</a><sup>*</sup>
+                  <sup>1</sup>,
+                </span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Daniel</a>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhengyang Liu</a><sup>*</sup>
+                    <sup>1</sup>,
                   </span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Haerin</a>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Yan Shu</a><sup>1,2</sup>,
                   </span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Hyein</a>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Junjie Zhou</a><sup>1,3</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Huaying Yuan</a><sup>1,4</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Shitao Xiao</a><sup>1</sup>,
+                  </span>
+                    <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Bo Zhao</a><sup>1,5</sup>,
+                  </span>
+                  </span>
+                    <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zheng Liu</a><sup>☨</sup><sup>1</sup>,
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Newjeans</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block"><sup>1</sup>Beijing Academy of Artificial Intelligence</span>
+                    <span class="author-block"><sup>2</sup>University of Trento</span>
+                    <span class="author-block"><sup>3</sup>Beijing University of Posts and Telecommunications</span>
+                    <span class="author-block"><sup>4</sup>Renmin University of China</span>
+                    <span class="author-block"><sup>5</sup>Shanghai Jiao Tong University</span>
+
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span>
+                    <span class="eql-cntrb"><small><br><sup>☨</sup>Corresponding Authors</small></span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper(Comming Soon)</span>
+            
+                    <!-- Github link -->
+                    <span class="link-block">
+                      <a href="https://github.com/VectorSpaceLab/Video-XL" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
+                    <!-- Model Huggingface Link -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="https://huggingface.co/BAAI/Video-XL-2" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <!-- <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span> -->
+                      <span class="icon">
+                        🤗
+                      </span>
+                      <span>Model</span>
+                      </a>
+                    </span>
+                  
+                   <!-- Arxiv PDF link -->
+                    <span class="link-block">
+                      <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Demo Show</span>
+                      <span>Tech Report (Comming Soon)</span>
                     </a>
                   </span>
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
             </div>
           </div>
         </div>
@@ -118,29 +152,11 @@
 </section>
 
 
-<!-- Main statement -->
-<!-- <section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video-XL2</h2>
-        <div class="content has-text-justified">
-          <p>
-          The field of long video understanding is rapidly evolving. While numerous existing models achieve strong performance on benchmarks, their substantial memory overhead and high response latency become a critical bottleneck, especially as video input lengths grow. 
-          To definitively overcome these limitations and maintain superior performance, we're releasing Video-XL2. It makes faster and better long video understanding possible, with key features including:
-          State-of-the-art performance among existing open-source models with comparable parameters (as of 2025.6.1).
-          High speed and ultra-low memory usage for processing videos of any length.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video-XL2</h2>
+        <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
           The field of long video understanding is rapidly evolving. While numerous existing models achieve strong performance on benchmarks, their substantial memory overhead and high response latency become a critical bottleneck, especially as video input lengths grow.
@@ -162,73 +178,84 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">State-of-the-Art Performance in Long Video Understanding and Temporal Grounding</h2>
+        <h2 class="title is-3">Performance and Efficiency</h2>
         <div class="content has-text-justified">
           <p>
-            Video-XL2-8B consistently achieves **state-of-the-art performance** across mainstream Long Video Understanding and Temporal Grounding benchmarks when compared against open-source models with similar parameter counts.
+            Video-XL-2-8B consistently achieves <strong> state-of-the-art performance </strong> across mainstream Long Video Understanding and Temporal Grounding benchmarks when compared against open-source models with similar parameter counts.
           </p>
 
-          <h3>Long Video Understanding</h3>
+          <h3>SOAT Performance</h3>
           <p>
-            Video-XL2-8B demonstrates **remarkable capabilities** across multiple long video benchmarks, scoring **74.9 on MLVU, 66.4 on VideoMME, and 60.7 on LongVideoBench**.
+            Video-XL2-8B demonstrates <strong> remarkable capabilities </strong> across multiple long video benchmarks, scoring <strong> 74.9 on MLVU, 66.4 on VideoMME, and 60.7 on LongVideoBench</strong>. Video-XL2-8B showcases <strong> impressive performance </strong> in Temporal Grounding, establishing itself as the *the best general VLM for this task. Video-XL2-8B achieved <strong> XX on TimePass, XX on Charades-STA, and XX on VISTAL </strong> . Notably, it <strong> surpasses 72B models </strong> on some benchmarks.
           </p>
-          <!-- <img src="images/carousel1.jpg" alt="motivation" class="inserted-image-noshadow"> -->
+          <!-- <img src="./static/images/performance.png" alt="motivation" class="inserted-image-noshadow"> -->
+          <figure>
+            <img src="./static/images/performancev2.png" alt="Video-XL2-8B 在长视频理解和时间定位基准测试中的性能对比图，展示其超越其他模型的表现。" class="inserted-image-noshadow">
+            <figcaption>Figure 1: Video-XL2-8B demonstrates state-of-the-art performance on long video benchmarks and temporal grounding tasks when compared to open-source models with similar parameter counts. This includes outperforming 72B models in specific benchmarks.</figcaption>
+          </figure>
 
-          <h3>Temporal Grounding</h3>
+
+          <h3>Leading Efficiency</h3>
           <p>
-            Video-XL2-8B showcases **impressive performance** in Temporal Grounding, establishing itself as the *the best general VLM** for this task. Video-XL2-8B achieved **XX on TimePass, XX on Charades-STA, and XX on VISTAL**. Notably, it **surpasses 72B models** on some benchmarks.
+              In addition to strong performance, the other impressive and obvious advantage is high efficiency for processing long video. We propose two key innovations (block-granularity pre-filling, selective decoding)
+              to largely accelerate it and maintain its performance. As a result, Video-XL2 achieves remarkable reductions in prefilling FLOPS and KV Cache demands during decoding, significantly reducing the Time To First Token (TTFT).
           </p>
-        </div>
+
+          <div style="display: flex; justify-content: space-around; align-items: flex-start; flex-wrap: wrap;">
+              <figure style="flex: 1; min-width: 45%; margin: 10px;">
+                  <img src="./static/images/speedv2.png" alt="pre-filling speed" class="inserted-image-noshadow">
+                  <figcaption><b>Figure 1:</b> Prefilling Speed Comparison.</figcaption>
+              </figure>
+
+              <figure style="flex: 1; min-width: 45%; margin: 10px;">
+                  <img src="./static/images/memoryv2.png" alt="memory efficiency" class="inserted-image-noshadow">
+                  <figcaption><b>Figure 2:</b> Video Frame Processing Comparison Across Models and GPUs.</figcaption>
+              </figure>
+          </div>
+
+          </div>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- Section 2 -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Superior Efficiency</h2>
+        <h2 class="title is-3">Model Architecture and Training Strategy</h2>
         <div class="content has-text-justified">
           <p>
-            In addition to strong performance, the other impressive and obvious advantage is high efficiency for processing long video. We propose two key innovation (block-granularity pre-filiing, selecting decoding) 
-            to largely accelerate it and maintain its performance. As a result, Video-XL2 make remarkable reduction on prefilling FLOPS and KV Cache demanding in decoding and reduce the TTFT.
+            The overall framework of Video-XL2 is designed for robust video understanding, integrating a powerful visual encoder with a large language model and a multi-stage training approach.
           </p>
-          <!-- <img src="images/carousel3.jpg" alt="motivation" class="inserted-image-noshadow"> -->
+
+
+          <h3>Architecture Overview</h3>
           <p>
-            This advantage is more obvious in extremely-long scenario or long resource scenario. As the following Fig 3 shows, compared to Video-ChatFlash, Video-XL2 still maintain high prefilling speed in thougnds frames input.
-            At the same time, its maintain low memory resource demanding. This point make our models better for these special but more important and realistic scenario.
+            Video-XL2 builds upon the robust model architecture of Video-XL Pro, which has demonstrated impressive performance across numerous experiments. 
+            Specifically, Video-XL2 utilizes SigLIP-SO400M as its foundational visual encoder. Following this, a Dynamic Token Synthesize (DTS) Module losslessly compresses visual token sequences by 4x. 
+            For the large language model backbone, we've adopted Qwen2.5-Instruct. 
+            Further architectural details you can find in our <a href="https://arxiv.org/pdf/2503.18478">https://arxiv.org/pdf/2503.18478</a>.
           </p>
-          <!-- <img src="images/carousel3.jpg" alt="motivation" class="inserted-image-noshadow"> -->
+              <figure style="flex: 1; min-width: 45%; margin: 10px;">
+                  <img src="./static/images/modelv2.png" alt="memory efficiency" class="inserted-image-noshadow">
+                  <figcaption><b>Figure 3:</b> Model Architecture.</figcaption>
+             </figure>
+
+          <h3>Training Strategy</h3>
+          <p>
+            Our training process is divided into four distinct stages, each designed to incrementally build and refine the model's capabilities:
+          </p>
+          <figure>
+              <img src="./static/images/training-strategy.png" alt="training" class="inserted-image-noshadow">
+              <figcaption><b>Figure 4</b>: The training strategy of Video-XL2.</figcaption>
+          </figure>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- Section 2-->
-
-
-
-<!-- Section 3 -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Model Architecture And Training Strategy</h2>
-        <div class="content has-text-justified">
-          <p>
-            1. 模型架构：要包含时间戳和 time embedding
-            2. 简单说一下训练阶段的设计
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Section 3-->
-
 
 
 <!-- Section 4 -->
@@ -243,6 +270,7 @@
             Video-XL2 make a comprehensive acceleration strategy including prefilling and decoding for long video understanding. The strategy is consist
             of two key innovation techniques: Block-granularity Sparsity Attention and Bi-level KV Decoding. These approaches make our models achieve low memory demanding and high speed on both pre-filling and decoding.
           </p>
+
         
 
         <h3>Prefilling: Block-granularity Sparsity Attention</h3>
@@ -253,13 +281,21 @@
             the information carrier, each timestamps betwee chunks summary the history information and pass it to the later chunks. This design make Video-XL2 largely reduce the
             attention flops. The above design can be summaried as the Figure 4.
         </p>
+          <figure style="flex: 1; min-width: 45%; margin: 10px;">
+              <img src="./static/images/prefill.png" alt="memory efficiency" class="inserted-image-noshadow">
+              <figcaption><b>Figure 5:</b>Block-granularity Sparsity Attention.</figcaption>
+          </figure>
 
-        <h3>Dedoding: Bi-level KV Decoding</h3>
+        <h3>Dedoding: Bi-level KVs Decoding</h3>
         <p>
            After prefilling, all KVs prepared in cache for subsequent decoding. The most cases in long video understanding is only fouces on single or multi time spans in
            long video. So, based on this, we select KVs of  important video chunks for providing detailed local information and merge the other KVs to reduce KV cache demanding and provide coarse
            -granularity abstract global information. Through this approach, Video-XL2 counld get better performance in detail undersatanding and high efficiency in decoding.
         </p>
+          <figure style="flex: 1; min-width: 45%; margin: 10px;">
+              <img src="./static/images/decoding.png" alt="memory efficiency" class="inserted-image-noshadow">
+              <figcaption><b>Figure 6:</b> Bi-level KVs Decoding.</figcaption>
+          </figure>
 
         </div>
       </div>
@@ -272,11 +308,23 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@article{shu2024video,
+  title={Video-XL: Extra-Long Vision Language Model for Hour-Scale Video Understanding},
+  author={Shu, Yan and Zhang, Peitian and Liu, Zheng and Qin, Minghao and Zhou, Junjie and Huang, Tiejun and Zhao, Bo},
+  journal={arXiv preprint arXiv:2409.14485},
+  year={2024}
+}
+
+@article{liu2025video,
+  title={Video-XL-Pro: Reconstructive Token Compression for Extremely Long Video Understanding},
+  author={Liu, Xiangrui and Shu, Yan and Liu, Zheng and Li, Ao and Tian, Yang and Zhao, Bo},
+  journal={arXiv preprint arXiv:2503.18478},
+  year={2025}
+}
+</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
-
 
   <footer class="footer">
   <div class="container">
