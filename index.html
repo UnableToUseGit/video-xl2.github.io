@@ -70,7 +70,7 @@
                   <sup>1</sup>,
                 </span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhengyang Liu</a><sup>*</sup>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhengyang Liang</a><sup>*</sup>
                     <sup>1</sup>,
                   </span>
                   <span class="author-block">
@@ -160,7 +160,7 @@
         <div class="content has-text-justified">
           <p>
           The field of long video understanding is rapidly evolving. While numerous existing models achieve strong performance on benchmarks, their substantial memory overhead and high response latency become a critical bottleneck, especially as video input lengths grow.
-          To definitively overcome these limitations and maintain superior performance, we're releasing Video-XL2. It makes faster and better long video understanding possible, with key features including:
+          To overcome these limitations and maintain superior performance, we're releasing Video-XL-2. It makes better and faster long video understanding possible, with key features including:
           </p>
           <ul>
             <li><strong>State-of-the-art performance</strong> among existing open-source models with comparable parameters (as of 2025.6.1).</li>
@@ -181,24 +181,23 @@
         <h2 class="title is-3">Performance and Efficiency</h2>
         <div class="content has-text-justified">
           <p>
-            Video-XL-2-8B consistently achieves <strong> state-of-the-art performance </strong> across mainstream Long Video Understanding and Temporal Grounding benchmarks when compared against open-source models with similar parameter counts.
+            Video-XL-2 consistently achieves <strong> state-of-the-art performance </strong> across mainstream Long Video Understanding and Temporal Grounding benchmarks when compared against open-source models with similar parameter counts.
           </p>
 
           <h3>SOAT Performance</h3>
           <p>
-            Video-XL2-8B demonstrates <strong> remarkable capabilities </strong> across multiple long video benchmarks, scoring <strong> 74.9 on MLVU, 66.4 on VideoMME, and 60.7 on LongVideoBench</strong>. Video-XL2-8B showcases <strong> impressive performance </strong> in Temporal Grounding, establishing itself as the *the best general VLM for this task. Video-XL2-8B achieved <strong> XX on TimePass, XX on Charades-STA, and XX on VISTAL </strong> . Notably, it <strong> surpasses 72B models </strong> on some benchmarks.
+            Video-XL-2 demonstrates <strong> remarkable capabilities </strong> across multiple long video benchmarks, scoring <strong> 74.9 on MLVU, 66.4 on VideoMME, and 48.6 on LVBench</strong>. Notably, Video-XL-2 achieved the <strong>lowest average FLOPs</strong> despite not having the shortest input length during testing, demonstrating its remarkable efficiency. Video-XL-2 also showcases impressive performance in Temporal Grounding task.
           </p>
           <!-- <img src="./static/images/performance.png" alt="motivation" class="inserted-image-noshadow"> -->
           <figure>
-            <img src="./static/images/performancev2.png" alt="Video-XL2-8B 在长视频理解和时间定位基准测试中的性能对比图，展示其超越其他模型的表现。" class="inserted-image-noshadow">
-            <figcaption>Figure 1: Video-XL2-8B demonstrates state-of-the-art performance on long video benchmarks and temporal grounding tasks when compared to open-source models with similar parameter counts. This includes outperforming 72B models in specific benchmarks.</figcaption>
+            <img src="./static/images/performancev2.png" alt="Video-XL-2-8B 在长视频理解和时间定位基准测试中的性能对比图，展示其超越其他模型的表现。" class="inserted-image-noshadow">
+            <figcaption>Table 1: The performance of Video-XL-2 on long video undersatanding benchmarks and temporal grounding benchmarks.</figcaption>
           </figure>
 
 
           <h3>Leading Efficiency</h3>
           <p>
-              In addition to strong performance, the other impressive and obvious advantage is high efficiency for processing long video. We propose two key innovations (block-granularity pre-filling, selective decoding)
-              to largely accelerate it and maintain its performance. As a result, Video-XL2 achieves remarkable reductions in prefilling FLOPS and KV Cache demands during decoding, significantly reducing the Time To First Token (TTFT).
+              In addition to strong performance, <strong> high efficiency</strong> for processing long videos is another impressive and obvious advantage. We propose two key innovations: <strong> chunk-based pre-filling</strong> and <strong>selective KVS decoding</strong> to largely accelerate it while maintaining performance. As the following figures show, Video-XL-2 delivers exceptional pre-filling speed and memory efficiency. <strong>For a fair comparison, both presented results are obtained under native (eager) attention</strong> .
           </p>
 
           <div style="display: flex; justify-content: space-around; align-items: flex-start; flex-wrap: wrap;">
@@ -227,14 +226,13 @@
         <h2 class="title is-3">Model Architecture and Training Strategy</h2>
         <div class="content has-text-justified">
           <p>
-            The overall framework of Video-XL2 is designed for robust video understanding, integrating a powerful visual encoder with a large language model and a multi-stage training approach.
+             Designed for long video understanding, Video-XL-2 leverages a powerful model architecture and a multi-stage training approach.
           </p>
-
 
           <h3>Architecture Overview</h3>
           <p>
-            Video-XL2 builds upon the robust model architecture of Video-XL Pro, which has demonstrated impressive performance across numerous experiments. 
-            Specifically, Video-XL2 utilizes SigLIP-SO400M as its foundational visual encoder. Following this, a Dynamic Token Synthesize (DTS) Module losslessly compresses visual token sequences by 4x. 
+            Video-XL-2 builds upon the robust model architecture of Video-XL Pro, which has demonstrated impressive performance across numerous experiments. 
+            Specifically, Video-XL-2 utilizes SigLIP-SO400M as its foundational visual encoder. Following this, a Dynamic Token Synthesize (DTS) Module losslessly compresses visual token sequences by 4x. 
             For the large language model backbone, we've adopted Qwen2.5-Instruct. 
             Further architectural details you can find in our <a href="https://arxiv.org/pdf/2503.18478">https://arxiv.org/pdf/2503.18478</a>.
           </p>
@@ -249,7 +247,7 @@
           </p>
           <figure>
               <img src="./static/images/training-strategy.png" alt="training" class="inserted-image-noshadow">
-              <figcaption><b>Figure 4</b>: The training strategy of Video-XL2.</figcaption>
+              <figcaption><b>Figure 4</b>: The training strategy of Video-XL-2.</figcaption>
           </figure>
         </div>
       </div>
@@ -267,30 +265,26 @@
         <h2 class="title is-3">Acceleration Approach </h2>
         <div class="content has-text-justified">
           <p>
-            Video-XL2 make a comprehensive acceleration strategy including prefilling and decoding for long video understanding. The strategy is consist
-            of two key innovation techniques: Block-granularity Sparsity Attention and Bi-level KV Decoding. These approaches make our models achieve low memory demanding and high speed on both pre-filling and decoding.
+            Video-XL-2 make a comprehensive acceleration strategy including prefilling and decoding for long video understanding. The strategy is consist
+            of two key innovation techniques: Chunk-based pre-filling and Bi-level KVs Decoding. These approaches make our models achieve low memory demanding and high speed on both pre-filling and decoding.
           </p>
 
-        
-
-        <h3>Prefilling: Block-granularity Sparsity Attention</h3>
+        <h3>Prefilling: Chunk-based pre-filling</h3>
         <p>
-            For prefilling acceleration, previous works have oberseve the attention pattern in video LLM is super sparse. Based on these observation, we streamingly encode
-            video chunks one by one, and provided with long term memory and short term memory for preserving complete video contextual structure. For short term information, we 
-            apply Block-granularity sliding window mechanism to make each chunk can aggregate the information of n chunks before it. For Long Term, the timpestampe was made to be
-            the information carrier, each timestamps betwee chunks summary the history information and pass it to the later chunks. This design make Video-XL2 largely reduce the
-            attention flops. The above design can be summaried as the Figure 4.
+            For prefilling acceleration, previous works have oberseve the attention pattern in video LLM is super sparse. Based on these observation, we <strong> encode
+            video chunks one by one</strong>, and made the timpestampe to be the information carrier, each timestamps betwee chunks summary the history information and pass it to the later chunks. This design make Video-XL-2 largely reduce the
+            attention flops. The above design can be summaried as the Figure 5.
         </p>
           <figure style="flex: 1; min-width: 45%; margin: 10px;">
               <img src="./static/images/prefill.png" alt="memory efficiency" class="inserted-image-noshadow">
-              <figcaption><b>Figure 5:</b>Block-granularity Sparsity Attention.</figcaption>
+              <figcaption><b>Figure 5:</b>Chunk-based pre-filling.</figcaption>
           </figure>
 
         <h3>Dedoding: Bi-level KVs Decoding</h3>
         <p>
            After prefilling, all KVs prepared in cache for subsequent decoding. The most cases in long video understanding is only fouces on single or multi time spans in
-           long video. So, based on this, we select KVs of  important video chunks for providing detailed local information and merge the other KVs to reduce KV cache demanding and provide coarse
-           -granularity abstract global information. Through this approach, Video-XL2 counld get better performance in detail undersatanding and high efficiency in decoding.
+           long video. So, based on this, we select <strong> dense KVs </strong> of important video chunks for providing detailed local information and downsample the other KVs to <strong>sparse KVs</strong> for reducing KV cache demanding and provide coarse
+           -granularity abstract global information. Through this approach, Video-XL-2 counld get better performance in detail undersatanding and high efficiency in decoding.
         </p>
           <figure style="flex: 1; min-width: 45%; margin: 10px;">
               <img src="./static/images/decoding.png" alt="memory efficiency" class="inserted-image-noshadow">
